@@ -1,0 +1,151 @@
+<% include header %>
+<script>
+var found = <%= found %>;
+</script>
+<div class="container bump-me">
+    <div class="body-content">
+        <div class="row">
+            <div class="col-md-8 col-offset-1">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">HeyLetz는 초대를 받으신 분에 한에서만 이용이 가능합니다.
+                  <!--  <i class="glyphicon glyphicon-envelope" id='request' data-toggle="tooltip" data-placement="bottom" title="ㄹㅇㅁㄴ">초대장신청</i>-->
+                  <button class="btn btn-link btn-xs" id="request" type="button" > 만약 초대장이 없으시다면? </button>
+                  </div>
+                    <div class="panel-body">
+                      <p></p>
+
+                        <!--
+                        <input type="radio" name="gender" checked value="male" onclick="myFunction(this.value)" > Male<br>
+                        <input type="radio" name="gender" value="female" onclick="myFunction(this.value)"> Female<br>
+                          <input type="hidden" id="sex">
+
+                          <input type="radio" name="gender"  id="male_radio"  value="male"  > Male<br>
+                          <input type="radio" name="gender" id="female_radio" value="female" > Female<br>
+                      -->
+                    <!--  -->
+                    <div class="form-horizontal">
+
+
+                      <div class="form-group form-group-sm">
+                        <label for="" class="col-md-2 control-label">초대 번호</label>
+                         <div class="col-md-5">
+                           <div class="input-group">
+                             <input type="text" class="form-control"  id="inviteId" placeholder="" aria-label="Search for..." data-toggle="tooltip" data-placement="top" title="초대장에 적힌 본인의 초대 번호를 입력해주세요">
+                             <span class="input-group-btn">
+                              <!-- <button class="btn btn-default btn-sm" id="submitId" type="button" >입력</button>-->
+                             </span>
+                           </div>
+                         </div>
+                           <div class="col-md-5">
+                         <span class="help-block" ><small></small> </span>
+                       </div>
+                       </div>
+
+                       <div class="form-group form-group-sm">
+                         <label for="" class="col-md-2 control-label"> 카카오톡 아이디</label>
+                          <div class="col-md-5">
+                            <div class="input-group">
+                              <input type="text" class="form-control"  id="katokId" placeholder="" aria-label="Search for..." data-toggle="tooltip" data-placement="top" title="본인의 카톡아이디를 입력해주세요">
+                              <span class="input-group-btn">
+                              <small>초대를 이미 받으셨다면 바로 회원가입이 가능합니다!</small>
+                              </span>
+                            </div>
+                          </div>
+                            <div class="col-md-5">
+
+                        </div>
+                        </div>
+
+                        <div class="form-group form-group-sm">
+                          <label for="" class="col-md-2 control-label"> </label>
+                           <div class="col-md-5">
+                             <div class="input-group">
+                                 <button class="btn btn-success " id="submitId" type="button" > SUBMIT </button>
+                             </div>
+                           </div>
+                           <div class="col-md-5">
+                           </div>
+                         </div>
+
+                        <!--
+                        <hr>
+                       <div class="form-group form-group-sm">
+                         <label for="" class="col-md-2 control-label"> 이메일</label>
+                          <div class="col-md-5">
+                            <div class="input-group">
+                              <input type="text" class="form-control"  id="invite_id" placeholder="" aria-label="Search for..." data-toggle="tooltip" data-placement="bottom" title="초대장을 받을 이메일을 입력해 주세요">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default btn-sm" id="checkRefEmail" type="button" >신청</button>
+                              </span>
+                            </div>
+                          </div>
+                            <div class="col-md-5">
+                          <span class="help-block" ><small>초대를 아직 받지 못하셨다면 초대장을 신청해 주세요!</small> </span>
+                        </div>
+                        </div>
+                      -->
+
+                      </div>
+                      <div class="panel-footer">
+
+                          <!--<a class="btn btn-danger" href="" onclick="onclicked()">Host View</a>
+                                        <a class="btn btn-danger" href="participant">Participant View</a>-->
+                      </div>
+
+                      </div>
+
+              </div>
+
+          </div>
+      </div>
+
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Heyletz!</h4>
+          </div>
+          <div class="modal-body">
+            <div id="modal_text"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="modal fade" id="myConfirm" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Heyletz!</h4>
+            </div>
+            <div class="modal-body">
+              <div class="col-sm-6">
+                 <label for="emailInput" id="confirm_text"></label><Br>
+
+                 <input class="form-control input-sm" id="emailInput" type="text">
+               </div>
+               <br><Br><Br>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" id="confirm_btn_yes" data-dismiss="modal">저장</button>
+              <button type="button" class="btn btn-default" id="confirm_btn_no" data-dismiss="modal">취소</button>
+            </div>
+          </div>
+        </div>
+     </div>
+    <script>
+
+    </script>
+  <script src="/js/signup.js"></script>
+  </div>

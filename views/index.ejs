@@ -1,0 +1,279 @@
+<% include header %>
+<script>
+ var obj = {
+   gender : <%= data.gender%>,
+   test : <%= data.test%>,
+   sid : "<%= data.sid%>",
+   email : "<%= data.email%>",
+   selfIntro : "<%= data.selfIntro%>",
+   idealType : "<%= data.idealType%>",
+   hobby : "<%= data.hobby%>",
+   auth : "<%= data.auth%>",
+   repetitive : <%= data.repetitive%>
+};
+
+</script>
+
+<script src="/js/index.js"></script>
+<!--style="background-image: url(/img/aaa.png);  opacity : 0.8;  background-repeat: no-repeat" col-offset-1-->
+  <div class="container bump-me" >
+
+    <div class="body-content" >
+      <div class="row" >
+        <div class="col-sm-12 ">
+
+          <div class="my-panel panel-default" >
+            <div class="my-panel-heading">
+              <% if(data.gender==0){ %>
+                <i class="fa fa-male" aria-hidden="true"></i>
+              <% }else{ %>
+                <i class="fa fa-female" aria-hidden="true"></i>
+              <%}%>
+              <%= data.name %>님
+              <span class="label label-warning" style="cursor:pointer;" id='myEmail' data-toggle="tooltip" data-placement="bottom" title="<%= data.email %>">프로필 수정</span>
+
+              <% if(!data.auth){ %>
+                <span class="label label-primary" style="cursor:pointer;" id='auth' data-toggle="tooltip" data-placement="bottom" title="">학교 인증</span>
+              <%}%>
+
+              <span data-toggle="tooltip" data-placement="bottom" title="포인트">[<i class="glyphicon glyphicon-grain" ></i><%= data.credit %>]</span>
+            </div>
+
+
+            <div class="panel-body" style="padding:0px;">
+              <div class="card border-info" >
+              <img class="card-img-top col-sm-5" src="/img/aaa.png" alt="Card image cap">
+              <div class="card-body border-info">
+              <br>
+              <button class="btn btn-success btn-lg" type="button" id="start">소개팅 시작</button>
+              <a class="btn btn-default btn-lg" target="_blank" id="testCall" >통화 테스트</a>
+              <h5 class="card-title"><span class="label label-info">잠시만요!</span></h5>
+              <p class="card-text text-info">
+                      <span class="glyphicon glyphicon-ok"></span> 매일 한국시간 9PM와 미국 동부시간 11PM에 10분간 이용할 수 있어요<Br>
+                      <span class="glyphicon glyphicon-ok"></span> 첫 음성통화 3분 동안 서로 마음에 드는 경우에만 추가로 6분의 영상통화를 하게 되어요<br>
+                      <span class="glyphicon glyphicon-ok"></span> 소개팅 중간에 창을 닫는 행동은 절대 삼가해 주세요 차후에 이용이 제한될 수 있습니다<br>
+                    <!--  <span class="glyphicon glyphicon-ok"></span> 시작 버튼을 누른 후에 잠시 상대방을 기다리게 될 수도 있어요<Br>-->
+                      <span class="glyphicon glyphicon-ok"></span> 본인과 최대한 근처의 분과 연결해 드리기 위해 아래에 위치를 입력해 주시기 바랍니다
+                      <div class="col-sm-7 ">
+                         <h6>
+                         <div id="postcodify" data-toggle="tooltip" data-placement="bottom" title="주소를 세글자 이상 입력해 주세요 예)원천동"></div>
+                         </h6>
+                         <input type="text" class="form-control " style="background-color: white; border:none"  placeholder=""  id="address"  aria-label="Username" aria-describedby="basic-addon1" >
+                         <div id="result"></div>
+                      </div>
+                </p>
+
+
+              </div>
+            </div>
+              </div>
+
+
+              <%if(data.test){ %>
+            <hr>
+            For dev, purpose
+            <form action="">
+              <!--
+              <input type="radio" name="gender" checked value="male" onclick="myFunction(this.value)" > Male<br>
+              <input type="radio" name="gender" value="female" onclick="myFunction(this.value)"> Female<br>
+            -->
+              <input type="radio" name="gender"  id="male_radio" value="male"  > Male<br>
+              <input type="radio" name="gender"  id="female_radio" value="female" > Female<br>
+
+              <!--<input type="radio" name="gender" value="other"> Other
+              <input type="hidden" id="sex">-->
+            </form>
+              <% } %>
+
+            <div class="my-panel-footer">
+
+              <!--  <a class="btn btn-danger" href="" onclick="onclicked()">Host View</a>
+                 <a class="btn btn-danger" href="participant">Participant View</a>-->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    </div>
+
+    <div class="modal fade" id="myModal_index" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Heyletz!</h4>
+          </div>
+          <div class="modal-body">
+            <div id="modal_text_index"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="modal fade" id="myModal_index2" role="dialog">
+     <div class="modal-dialog">
+       <!-- Modal content-->
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal">&times;</button>
+           <h4 class="modal-title">Heyletz!</h4>
+         </div>
+         <div class="modal-body">
+           <div id="modal_text_index2"></div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-default" onclick="myOnclick()" data-dismiss="modal">닫기</button>
+         </div>
+       </div>
+     </div>
+  </div>
+   <div class="modal fade" id="myConfirm" role="dialog">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">프로필 수정</h4>
+
+           </div>
+           <div class="modal-body">
+
+             <div class="col-sm-12">
+                <label for="emailInput" id="confirm_text">이메일</label><Br>
+                <input class="form-control input-sm" id="emailInput" type="text">
+              </div>
+              <br><br><br><br>
+              <div class="col-sm-12">
+                 <label for="selfIntroInput" >내소개 </label> <Br>
+                 <textarea class="form-control" id="selfIntroInput" type="text" data-toggle="tooltip" data-placement="bottom" title="음성 통화로 연결 되기 전에 상대에게 보여집니다."></textarea>
+               </div>
+               <br><br><br><br><br><br>
+               <div class="col-sm-12">
+                  <label for="idealTypeInput" >나의 이상형</label>  <Br>
+                  <textarea class="form-control " id="idealTypeInput" type="text" data-toggle="tooltip" data-placement="bottom" title="음성 통화로 연결 되기 전에 상대에게 보여집니다."></textarea>
+                </div>
+                <br><br>  <br><br><br><br>
+                <div class="col-sm-12">
+                   <label for="hobbyInput" >취미</label>     <Br>
+                   <input class="form-control input-sm" id="hobbyInput" type="text" data-toggle="tooltip" data-placement="bottom" title="음성 통화로 연결 되기 전에 상대에게 보여집니다.">
+                 </div>
+                  <br><br>  <br><br>
+                 <div class="form-check col-sm-12">
+                   <input type="checkbox" class="form-check-input" id="avoid">
+                   <label class="form-check-label" for="avoid">같은 학교/전공은 피하고 싶어요</label>
+                 </div>
+
+
+                    <br><Br><Br>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-success" id="confirm_btn_yes" data-dismiss="modal">저장</button>
+             <button type="button" class="btn btn-default" id="confirm_btn_no" data-dismiss="modal">취소</button>
+           </div>
+         </div>
+
+       </div>
+    </div>
+    <div class="modal fade" id="authConfirm" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">학교 인증</h4>
+            </div>
+            <div class="modal-body">
+
+              <div class="form-group form-group-sm">
+                <label for="" class="col-md-2 control-label">학교</label>
+                 <div class="col-md-5">
+                       <select class="form-control input-sm" id="college">
+                        <!--  <option value="경희대학교">경희대</option>
+                          <option value="성균관대학교">성균관대</option>
+                          <option value="아주대학교">아주대</option>
+                            <option value="가천대학교">가천대</option>
+                            <option value="동서울대학교">동서울대</option>-->
+                       </select>
+                 </div>
+             </div>
+<br><br>
+             <div class="form-group form-group-sm">
+               <label for="" class="col-md-2 control-label">전공</label>
+                <div class="col-md-5">
+                      <select class="form-control input-sm"  id="major">
+                      </select>
+                </div>
+            </div>
+            <br>
+            <hr>
+            <br>
+                <div class="form-group form-group-sm">
+                  <label for="" class="col-md-3 control-label">학생증 업로드</label>
+                   <div class="col-md-5">
+                        <input type="file" id="file-input"  data-toggle="tooltip"  title="학교 인증을 위해 본인의 학생증 사진을 학번을 가리고 업로드해 주세요">
+                      <!-- <p id="status">Please select a file</p>-->
+                   </div>
+               </div>
+               <Br>
+                   <div class="">
+                 <div class="col-md-3 "></div>
+                 <div class="col-md-5">OR</div>
+            </div>
+            <Br><Br>
+
+                <div class="form-group form-group-sm">
+                  <label for="" class="col-md-3 control-label">학교 이메일</label>
+                    <div class=" col-md-5">
+
+                    <div class="input-group ">
+                        <input type="text" class="form-control col-md-2" id="collegeEmail" placeholder="" aria-label="Recipient's username"  aria-describedby="collegeDomain" data-toggle="tooltip" data-placement="bottom" title="학생증을 업로드 하기 원하지 않으시면 학교 메일로 인증을 받을수 있어요. ">
+                        <div class="input-group-append col-md-3">
+                          <span class="input-group-text" id="collegeDomain"></span>
+                        </div>
+                    </div>
+
+                    </div>
+               </div>
+                <Br>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-success" data-dismiss="modal">인증 요청</button>
+           <button type="button" class="btn btn-default"  data-dismiss="modal">취소</button>
+         </div>
+        </div>
+
+</div>
+</div>
+
+    <script>
+
+
+
+  //var obj=JSON.parse(obj2)
+
+
+/*
+  var name = obj.name;
+  var gender = obj.gender;
+  var test = obj.test;
+  var sid = obj.sid;
+  var email = obj.email;
+  var credit = obj.credit;
+*/
+  //console.log('index.ejs:',data,name);
+
+      //  alert('index.ejs:'+sid+'/'+gender+'/'+name);
+
+    </script>
+    <script src="//d1p7wdleee1q2z.cloudfront.net/post/search.min.js"></script>
+  <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+
+
+<% include footer %>

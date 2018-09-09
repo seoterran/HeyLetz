@@ -1,0 +1,82 @@
+
+<% include header %>
+
+<script>
+ var obj = {
+   appointId : "<%= data.appointId%>",
+   personId : "<%= data.personId%>"
+};
+
+</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js"></script>
+<script src="/js/schedule.js"></script>
+<div class="container bump-me" >
+  <div class="body-content">
+      <div class="row">
+          <div class="col-lg-6" >
+              <div class="panel panel-default">
+                  <div class="panel-heading"></div>
+                    <div class="panel-body">
+  <!-- <div class="jumbotron" style="left:32%; position:relative; width:40%; padding-left:1%; background-color:Ivory    !important; ">-->
+  <span>
+  소개팅은 8시 반에 진행되어요. 오후 8시 반에 화상 소개팅이 가능하신 날짜들을 아래 달력에서 선택해 주세요.
+</span>
+   <small class="text-muted">
+  (최대 8일까지 선택가능하고, 많은 날짜를 선택해 주셔야 성사될 확률이 높아요!)
+</small>
+
+  <div class="datepicker" ></div>
+
+  <Br>
+
+    <div class="form-group col-sm-7"  >
+      <label for="exampleInputEmail1">카톡 아이디</label>
+      <input class="form-control" id="contact" placeholder="카카오 아이디">
+      <small  class="form-text text-muted">소개팅 성공 시에 상대에게 공유될 카카오톡 아이디를 입력해 주세요</small>
+    </div>
+  <Br><Br>  <Br><Br> <Br><hr>
+    <div class="col-sm-2">
+      <div class="input-group" >
+          <button class="btn btn-success " id="submit" type="button" > SUBMIT </button>
+      </div>
+    </div>
+</div>
+
+    <div class="panel-footer" >
+      <div class="form-group form-group-sm" >
+
+       </div>
+        <!--<a class="btn btn-danger" href="" onclick="onclicked()">Host View</a>
+                      <a class="btn btn-danger" href="participant">Participant View</a>-->
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Heyletz!</h4>
+      </div>
+      <div class="modal-body">
+        <div id="modal_text"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<% include footer %>

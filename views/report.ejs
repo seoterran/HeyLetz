@@ -1,0 +1,78 @@
+<% include header %>
+<!--<script src="/js/landing.js"></script>-->
+<div class="container bump-me">
+    <div class="body-content">
+        <div class="row">
+            <div class="col-lg-6 col-offset-1">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading"> 오늘 소개팅은 어떠셨어요? 더욱 바람직한 헤이렛즈 문화를 만드는데 도움이 되도록 오늘의 소개팅 경험에 대해 간단히 적어주세요 </div>
+                    <div class="panel-body">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="report"  value="1" >
+                          화면에 상대방이 보이지 않았어요
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="report"  value="2" >
+                          소개팅 중간에 화상통화가 끊겼어요
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="report"  value="3" >
+                          상대분의 매너에 실망 했어요
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" name="report" value="4" >
+                          재밌네요! 또 해볼래요
+                        </label>
+                      </div>
+                         <!--
+                            <input type="radio" name="report"  value="1"> 화면에 상대방이 보이지 않았습니다.<br>
+                            <input type="radio" name="report"  value="2"> 소개팅 중간에 화상통화가 끊겼습니다.<br>
+                            <input type="radio" name="report"  value="3"> 상대분의 매너에 실망 했습니다.<br>
+                            <input type="radio" name="report"  value="4"> 한번 더 해보고 싶습니다<br>
+                          -->
+                            <textarea class="form-control" rows="4" cols="50" id="other" placeholder="다른 하실 말씀은 여기에 적어주세요"></textarea>
+                            <br>
+                        <button class="btn btn-info btn-block" onclick="submit()">전송<i class="fa fa-paper-plane" aria-hidden="true"></i></button><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal_report" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Heyletz!</h4>
+          </div>
+          <div class="modal-body">
+            <div id="modal_text_report"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+   </div>
+    <script>
+        var reporter_userId= "<%= reporter_userId %>";
+        var reporter_gender= "<%= reporter_gender %>";
+        var partner_userId= "<%= partner_userId %>";
+        var partner_gender= "<%= partner_gender %>";
+        var sessionId = "<%= sessionId %>";
+
+       // console.log('report.ejs',reporter);
+    </script>
+    <script src="/js/report.js"></script>
+</div>
+<% include footer %>

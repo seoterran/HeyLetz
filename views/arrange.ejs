@@ -1,0 +1,120 @@
+<% include header %>
+<script>
+</script>
+<style>
+.highlight {
+    background: yellow;
+  }
+  </style>
+<div class="container bump-me">
+
+    <div class="body-content">
+        <div class="row">
+            <div class="col-sm-6 col-offset-1">
+
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">혹시 헤일렛즈 플랫폼을 이용해서 소개팅 주선해 주실 분이 있으신가요?
+                  <!--  <i class="glyphicon glyphicon-envelope" id='request' data-toggle="tooltip" data-placement="bottom" title="ㄹㅇㅁㄴ">초대장신청</i>
+                  <button class="btn btn-link btn-xs" id="request" type="button" > 만약 초대장이 없으시다면? </button>-->
+                  </div>
+                    <div class="panel-body">
+                        <span id="tooltip" data-toggle="tooltip" data-placement="top" title=""><span>
+                         소개팅 당사자들의 연락처를 입력해 주시면 스케줄링과 영상통화 연결은 헤일렛즈가 맡을게요!
+                        <small class="text-muted">
+                       (소개팅은 서로가 약속한 날짜에 오후 8시 반에 시작햐여 5분간 이뤄지고 서로 마음에 들어한 경우에만 상대의 카톡아이디가 교환됩니다)
+                     </small>
+
+<hr>
+                      <div class="form-group  ">
+
+                          <span class="label label-default"  > 주선자 (본인)</span>
+                          <small class="text-muted">
+                         주선 성공시 헤일렛즈 포인트 제공 (헤일렛즈 영상 소개팅 10회)
+                       </small>
+                        <br><br>
+
+                        <div class="form-row_">
+                          <div class="col-sm-3">
+                            <input type="text" class="form-control form-control-sm " id="matchmaker_name" placeholder="이름" required>
+                          </div>
+                          <div class="col-sm-6">
+                            <input type="email" class="form-control form-control-sm email" id="matchmaker_email" placeholder="Email" required>
+                          </div>
+                      </div>
+                      </div>
+                      <Br><br>
+
+
+                      <div class="form-group  ">
+
+                        <label for="inputEmail4" class="label label-danger" > 소개팅 녀</label> <br><br>
+
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control form-control-sm " id="name1" placeholder="이름" required>
+                        </div>
+                        <div class=" col-sm-6">
+                          <input type="email" class="form-control form-control-sm email" id="email1" placeholder="Email" required>
+                        </div>
+                      </div>
+
+                        <br>  <br>
+                      <div class="form-group ">
+
+                        <label class="label label-primary" > 소개팅 남</label><br><br>
+
+                        <div class="col-sm-3">
+                          <input type="text" class="form-control form-control-sm " id="name2" placeholder="이름" required>
+                        </div>
+                        <div class="col-sm-6">
+                          <input type="email" class="form-control form-control-sm email" id="email2" placeholder="Email" required>
+                        </div>
+                      </div>
+                <Br><hr>
+                      <div class="col-sm-9">
+
+                              <button type="button" class="btn btn-default " style="float:right" id="submit" > SUBMIT </button>
+
+                        </div>
+
+                      </div>
+                      <div class="panel-footer">
+                        <div class="form-group form-group-sm">
+
+                         </div>
+                          <!--<a class="btn btn-danger" href="" onclick="onclicked()">Host View</a>
+                                        <a class="btn btn-danger" href="participant">Participant View</a>-->
+                      </div>
+
+              </div>
+
+          </div>
+      </div>
+
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Heyletz!</h4>
+          </div>
+          <div class="modal-body">
+            <div id="modal_text"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <script>
+
+    </script>
+  <script src="/js/arrange.js"></script>
+  </div>

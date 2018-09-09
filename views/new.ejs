@@ -1,0 +1,164 @@
+<% include header %>
+
+
+
+  <div class="container bump-me">
+    <div class="body-content">
+
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title " id="r1_count" style="color:lightgray; text-align:right;">
+
+          </h3>
+        </div>
+        <div class="panel-body-video">
+
+
+
+         <div id="video-holder">
+           <div id="subscriber">
+             <div class="waiting">
+               <div class="spinner"></div>
+               <p>상대분을 기다리고 있습니다...</p>
+             </div>
+           </div>
+           <div id="publisher" ></div>
+         </div>
+        </div>
+        <!--
+        <div id="alert" class="alert alert-warning col-md-3" role="alert">   </div>
+      -->
+      </div>
+
+     </div>
+<!--
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Instructions</h3>
+      </div>
+      <div class="panel-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>When</th>
+                <th>You will see</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="vertical-align: middle;">Archiving is started</td>
+                <td><img src="img/archiving-on-message.png"></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: middle;">Archiving remains on</td>
+                <td><img src="img/archiving-on-idle.png"></td>
+              </tr>
+              <tr>
+                <td style="vertical-align: middle;">Archiving is stopped</td>
+                <td><img src="img/archiving-off.png"></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    -->
+
+   <div class="modal fade" id="myModal_profile" role="dialog">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">오늘 인연의 프로필이 마음에 드세요?
+              <span class="count"></span>
+            </h4>
+           </div>
+           <div class="modal-body">
+               <label for="selfIntro" >자기 소개</label>
+                <p type="text" id="selfIntro" >   </p>
+               <br>
+               <Br>
+                 <label for="hobby">취미</label>
+                 <p  type="text" id="hobby">  <p>
+                   <br>
+
+               <label for="idealType" >이상형</label>
+                   <p  type="text" id="hobby">  <p>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-success" data-toggle="tooltip" data-placement="bottom" title="상대분도 마음에 들 경우 보이스 톡으로 넘어갑니다"  data-dismiss="modal">예!</button>
+             <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="여기서 그만 둡니다" data-dismiss="modal">아니요</button>
+           </div>
+         </div>
+       </div>
+    </div>
+
+    <div class="modal fade" id="myModal_new" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Heyletz!</h4>
+          </div>
+          <div class="modal-body">
+            <div id="modal_text_new"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+   </div>
+   <div class="modal fade" id="myConfirm" role="dialog">
+       <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+           <div class="modal-header">
+             <button type="button" class="close" data-dismiss="modal">&times;</button>
+             <h4 class="modal-title">Heyletz!</h4>
+           </div>
+           <div class="modal-body">
+             <span id="confirm_text"></span><span id="confirm_count"></span>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-success" id="confirm_btn_yes" data-dismiss="modal">좋아요!</button>
+             <button type="button" class="btn btn-default" id="confirm_btn_no" data-dismiss="modal">아니오</button>
+           </div>
+         </div>
+       </div>
+    </div>
+    <div class="modal fade" id="myConfirm2" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Heyletz!</h4>
+            </div>
+            <div class="modal-body">
+              <div id="confirm_text2"></div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-success" id="confirm_btn_yes2" data-dismiss="modal">좋아요!</button>
+              <button type="button" class="btn btn-default" id="confirm_btn_no2" data-dismiss="modal">아니오</button>
+            </div>
+          </div>
+        </div>
+     </div>
+    <script>
+        var sessionId = "<%= sessionId %>";
+        var apiKey = "<%= apiKey %>";
+        var token = "<%= token %>";
+        var gender = "<%= gender %>";
+        var userId = "<%= userId %>";
+        var round0 = "<%= round0 %>";
+        var round1 = "<%= round1 %>";
+        var round2 = "<%= round2 %>";
+        var breakTime = "<%= breakTime %>";
+    </script>
+    <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+    <script  type="text/javascript" src="/js/new.js"></script>
+  </div>
+<% include footer %>
