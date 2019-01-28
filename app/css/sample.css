@@ -1,0 +1,227 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+.bump-me {
+  margin-top:70px;
+}
+.radio-inline {
+    padding-top: 7px;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right:10px;
+}
+
+.divider {
+  width:120px;
+}
+
+.my-facebook-button-class{
+  font-family: Helvetica,sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 10;/*calc(.27548vw + 12.71074px);*/
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color .3s,border-color .3s;
+  background-color: #4c69ba;
+  border: calc(.06887vw + .67769px) solid #4c69ba;
+  /*padding: calc(.34435vw + 3.38843px) calc(.34435vw + 8.38843px);*/
+}
+/*
+.navbar {
+    position: relative;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+}
+
+.navbar-fixed-bottom, .navbar-fixed-top {
+    position: fixed;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.panel-default {
+    border-color: #ddd;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 1px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}*/
+
+.navbar-default .navbar-brand {
+    color: #777;
+}
+.navbar {
+  border: 1px solid transparent;
+}
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (max-width: 600px) {
+  /* Remove padding from wrapping element since we kick in the grid classes here */
+  .body-content {
+    padding: 0;
+  }
+}
+
+.panel-body-video {
+    padding: 0px ;
+}
+
+#video-holder {
+  /*z-index: 100;*/
+  position: relative;
+  /*min-width: 500px;*/
+  min-height: 75vh;/*600px;*//*768px;38em;*/
+  text-align: center;
+  /*background-color: transparent; */
+  background-color: black;
+  border:0px !important;
+}
+
+#subscriber{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+}
+
+#publisher {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  z-index: 10;
+  min-width: 100px;
+  /*
+    min-width: 150px;
+   border: 1px solid black;
+ border-radius: 3px;
+   */
+}
+
+
+.waiting,
+.ending {
+  color: #ccc;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  height: 5em;
+  font-size: 1.3em;
+
+
+}
+
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  margin: auto;
+  color: black !important;
+  background-color: #ccc;
+  border-radius: 100%;
+
+  -webkit-animation: scaleout 1.0s infinite ease-in-out ;
+  animation: scaleout 1.0s infinite ease-in-out ;
+
+}
+
+@-webkit-keyframes scaleout {
+  0% { -webkit-transform: scale(0.0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes scaleout {
+  0% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 100% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+.alert-minimalist {
+	background-color: rgb(241, 242, 240);
+	border-color: rgba(149, 149, 149, 0.3);
+	border-radius: 3px;
+	color: rgb(149, 149, 149);
+	padding: 10px;
+}
+.alert-minimalist > [data-notify="icon"] {
+	height: 50px;
+	margin-right: 12px;
+}
+.alert-minimalist > [data-notify="title"] {
+	color: rgb(51, 51, 51);
+	display: block;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+.alert-minimalist > [data-notify="message"] {
+	font-size: 80%;
+}
+.my-panel{
+  margin-bottom:20px;
+  border:none;
+}
+.my-panel-heading{
+  padding:10px 15px;
+  border-bottom: 1px solid #ddd;
+}
+.my-panel-footer{
+  padding:10px 15px;
+  border-top: 1px solid #ddd;
+}
+/*
+
+#subscribers div {
+  float: left;
+
+
+}
+#subscribers{
+  z-index:100;
+}
+#publisher{
+  position : relative;
+  top: 1px;
+  right :1px;
+  z-index:200 !important;
+}
+
+
+.bump-me {
+  padding-top: 40px;
+}*/
