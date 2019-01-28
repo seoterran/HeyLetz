@@ -16,6 +16,7 @@ const express = require('express'),
       bodyParser = require('body-parser'),
       newMatch = require('./routes/newMatch'),
       forceSsl = require('force-ssl-heroku'),
+      path = require('path'),
       config = require('./config');
 require('./models/db');//required
 /*
@@ -31,11 +32,14 @@ app.set('view engine', 'ejs');
 app.set('port', (process.env.PORT || 3000));
 app.set('views', __dirname + '/views');
 
+//app.use(express.static(path.join(__dirname, '..','build'));
+app.use(express.static('build'));
 app.use(express.static(__dirname + '/public'));
-app.use(express.static(__dirname + '/public_site'));
+//app.use(express.static(__dirname + '/public_site'));
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(bodyParser.json());
 
 //app.use(express.static('static'));
 app.use(forceSsl);
@@ -50,8 +54,10 @@ app.all(function(req, res, next) {
 
 app.get('/', function(req, res) { //use 로 바꾸면 뭔가 이상함..왜
     //res.render('landing.ejs');
-  //  console.log('dfafds');
-    res.sendFile('index.html');
+    console.log('root');
+  //  res.sendFile('./public_site/index.html');
+  var filePath = path.join(__dirname,'..','build','app_index.html');
+  res.sendFile(filePath);
 });
 
 app.get('/signup',function(req, res) {
@@ -60,10 +66,27 @@ app.get('/signup',function(req, res) {
       found:true
     });
     */
-    res.render('signup_main.ejs',{
+      console.log('signup');
+    var filePath = path.join(__dirname,'..','build','app_index.html');
+  /*  res.render('signup_main.ejs',{
       invited:true,
       found:true
     });
+
+*/
+
+     res.sendFile(filePath);
+});
+
+app.get('/signup_react',function(req, res) {
+  //  var filePath = path.resolve(__dirname+'/../build/index.html');
+  var filePath = path.join(__dirname,'..','build','index.html');
+
+  console.log('signup_react2',filePath);
+//  res.sendFile(path.join(__dirname+'/sitemap.html'));
+
+  res.sendFile(filePath);
+  //  res.sendFile(path.join(__dirname+'/signup_react.html'));
 });
 
 app.get('/signup/:katokId',function(req, res) {
